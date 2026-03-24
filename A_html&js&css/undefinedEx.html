@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        let output = document.getElementById("output")
+
+        let mytitle = '자바스크립트';
+        output.innerHTML += '타이틀 : ' + mytitle + '<br>';
+
+        let myname ; /*변수_정의만_되어_있으면_undefined가_됨*/
+        output.innerHTML += '이름 : ' + myname + '<br>' ;
+
+        let num = 1 ;
+        let str = "1" ;
+
+
+        output.innerHTML += '== 비교 : ' + (num == str) + '<br>';
+        output.innerHTML += '=== 비교 : ' + (num === str) + '<br>';
+
+        if(myname === undefined){
+            output.innerHTML += '결과 : no<br>';
+        }else{
+            output.innerHTML += '결과 : yes<br>';
+        }
+
+        myname = "김철수";
+        output.innerHTML += '이름(값할당) : ' + myname + '<br>' ;
+
+        let pi = 3.14 ; // 편집 불가능
+        output.innerHTML += '이름(값할당) : ' + myname + '<br>' ;
+
+        /* 중괄호는 무조건 객체입니다. */
+        const hong = { name: '홍길동'};
+        output.innerHTML += '객체의 이름 : ' + hong.name + '<br>' ;
+        output.innerHTML += '객체의 나이 : ' + hong.age + '<br>' ;
+
+        /* 대괄호는 무조건 배열입니다. */
+        const members = ['김철수', '이규철', '박진섭'];
+        output.innerHTML += '배열의 0번째 요소 : ' + members[0] + '<br>' ;
+        output.innerHTML += '배열의 3번째 요소 : ' + members[3] + '<br>' ;
+
+
+    </script>
+</body>
+</html>

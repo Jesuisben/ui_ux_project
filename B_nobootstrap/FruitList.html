@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* 테두리 합치기 */
+        }
+
+        thead {
+            background-color: #f2f2f2;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        /* 가상(pseudo) 클래스 */
+        tr:hover { /* tr 택에 마우스가 영역 안으로 들어 오면 ... */
+            background-color: #f5f5f5; /* hover 효과 */
+        }
+
+        th {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>아이디</th>
+                <th>상품명</th>
+                <th>단가</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>사과</th>
+                <th>3,000 원</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>바나나</th>
+                <th>2,500 원</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>딸기</th>
+                <th>5,000 원</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
