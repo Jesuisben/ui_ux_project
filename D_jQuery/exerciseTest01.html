@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- jQuery Library Load -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .img-box {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #mainImage{
+            width: 90%;
+            height: 400px;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+            transform-origin: top left;
+        }
+
+        #mainImage:hover{
+            transform: scale(1.1);
+        }
+
+        .active-thumb{
+            border: 2px solid blue;
+        }
+
+        .control-group {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+<h5>썸네일 → 큰 이미지 변경 + 크기 조절</h5>
+<img id="mainImage" src="/images/americano01.png" class="img-fluid mb-2">
+
+<div class="control-group d-flex gap-2">
+    <input type="number" id="widthInput" class="form-control" placeholder="너비(px)" style="width: 400px;">
+    <input type="number" id="heightInput" class="form-control" placeholder="높이(px)" style="width: 400px;">
+    <button id="changeBtn" class="btn btn-primary">크기 변경</button>
+</div>
+
+<div>
+    <img src="/images/americano01.png" class="img-box thumb-image active-thumb">
+    <img src="/images/whitewine02.png" class="img-box thumb-image">
+    <img src="/images/brioche_02.png" class="img-box thumb-image">
+</div>
+
+<script>
+    $(function () {
+        $(".thumb-image").click(function(){
+            const newSrc = $(this).attr("src");
+            console.log(`선택된 이미지 : ${newSrc}`);
+
+            $("#mainImage").attr("src", newSrc);
+
+            $(".active-thumb").removeClass("active-thumb");
+            $(this).addClass("active-thumb");
+        });
+
+        $("#changeBtn").click(function() {
+          const w = $("#widthInput").val();
+          const h = $("#heightInput").val();
+
+          if (w !== "") {
+              $("#mainImage").css("width", w + "px");
+          }
+          if (h !== "") {
+              $("#mainImage").css("height", h + "px");
+          }
+      });
+    });
+</script>
+
+</body>
+</html>
